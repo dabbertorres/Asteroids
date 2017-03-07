@@ -1,6 +1,6 @@
 #include "Ship.hpp"
 
-constexpr float ACCEL = 100.f;
+constexpr float ACCEL = 200.f;
 constexpr float ROT_VELOCITY = 180.f;
 constexpr auto FIRE_PERIOD = 0.75s;
 

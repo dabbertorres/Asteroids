@@ -51,8 +51,16 @@ void Object::update(float dt)
 
 void Object::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
-	states.transform *= getTransform();
-	target.draw(getShape(), states);
+    auto& shape = getShape();
+
+    // round position for more accurate drawing (there's nothing smaller than a pixel after all!)
+    auto pos = shape.getPosition();
+    sf::Vector2f rounded{std::round(pos.x), std::round(pos.y)};
+    
+    auto transform = getTransform();
+    states.transform *= transform.translate(rounded - pos);
+
+	target.draw(shape, states);
 }
 
 void Object::privateUpdate(float)

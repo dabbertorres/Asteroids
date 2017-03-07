@@ -75,9 +75,9 @@ int main(int, char**)
 			lag -= DELTA_TIME;
 		}
 
-		// due to an amount of time (< DELTA_TIME) probably being left over after updating,
-		// interpolate positions of objects to keep things smooth
-//		interpolate(player, bullets, asteroids, lag);
+		// due to an amount of time (< DELTA_TIME) being left over after updating,
+		// interpolate positions of objects to keep things looking smooth
+		interpolate(player, bullets, asteroids, lag);
 
 		window.clear();
 
