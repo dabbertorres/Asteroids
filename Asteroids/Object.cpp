@@ -1,5 +1,7 @@
 #include "Object.hpp"
 
+#include <cmath>
+
 sf::Vector2u Object::windowSize = {0u, 0u};
 
 Object::Object(sf::Vector2f position, sf::Vector2f velocity)
